@@ -1,0 +1,16 @@
+@import 'support-for';
+@import 'normalize/variables';
+@import 'normalize/vertical-rhythm';
+@import 'normalize/normalize-mixin';
+
+@include normalize;
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+.preload *{
+	transition: none !important;
+}

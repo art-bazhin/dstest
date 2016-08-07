@@ -1,0 +1,12 @@
+.logo {
+	max-width: 123px;
+	max-height: 123px;
+  width: rem-calc(123);
+  height: rem-calc(123);
+
+  &--footer {
+	  width: rem-calc(58);
+	  height: rem-calc(58);
+	  opacity: 0.15;
+  }
+}

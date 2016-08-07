@@ -1,0 +1,39 @@
+.button { 
+  font-family: $font-primary;
+  font-size: rem-calc(16);
+  letter-spacing: 0.06em;
+  color: $color-white;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1em 2.5em;
+  border: 0.063em solid $color-white;
+  display: inline-block;
+  position: relative;
+  transition: opacity $hover-duration;
+
+  &:hover {
+  	opacity: $hover-opacity;
+  }
+
+  &--arrow:after {
+  	content: "";
+		width: 0.625em;
+		height: 0.625em;
+		border-left: 0.125em solid $color-white;
+		border-bottom: 0.125em solid $color-white;
+		position: absolute;
+		transform: rotate(-45deg);
+		top: 7.5em;
+		left: 48%;
+		transition: opacity $hover-duration;
+  }
+
+  	&--arrow:hover:after {
+  	opacity: $hover-opacity;
+  }
+
+  &--black {
+    color: $color-black;
+    border-color: $color-black;
+  }
+}

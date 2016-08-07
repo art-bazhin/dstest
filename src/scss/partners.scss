@@ -1,0 +1,39 @@
+.partners {
+	background-color: $color-partners;
+	font-family: $font-primary;
+	padding-bottom: rem-calc(100);
+
+	&__header {
+		font-size: rem-calc(30);
+		margin-top: 3em;//rem-calc(90);
+		margin-bottom: 3em;//rem-calc(30);
+		color: $color-white;
+		font-weight: 300;
+		letter-spacing: 0.06em;
+	}
+
+	&__partner {
+		@include grid-column(2);
+		text-align: left;
+	
+		&--first {
+			@include grid-column-offset(2)
+		}
+
+		&--last {
+			@include grid-column-end;
+			padding-top: rem-calc(5);
+		}
+	}
+
+	&__partner-img {
+		padding-left: rem-calc(15);
+		opacity: 1;
+		transition: opacity $hover-duration;
+		-webkit-backface-visibility: hidden;
+
+		&:hover {
+			opacity: $hover-opacity;
+		}
+	}
+}

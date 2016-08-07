@@ -1,0 +1,35 @@
+.promo {
+  background-color: $color-promo;
+  font-family: $font-primary;
+  color: $color-white;
+  text-align: center;
+  padding-top: rem-calc(215);
+  padding-bottom: rem-calc(240);
+
+  &__header {
+    margin-top: rem-calc(135);
+    margin-bottom: rem-calc(50);
+    font-size: rem-calc(34);
+    letter-spacing: 0.16em;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+
+  &__header:after {
+  	content: "";
+  	width: 3.088em;
+  	border-bottom: 0.059em solid $color-white;
+  	display: block;
+  	margin: 0 auto;
+  	margin-top: 1.471em;
+
+  }
+
+  &__tagline {
+  	font-size: rem-calc(14);
+    letter-spacing: 0.06em;
+    font-weight: 300;
+    margin-top: 0;
+    margin-bottom: rem-calc(160);
+  }
+}

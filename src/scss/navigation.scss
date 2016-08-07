@@ -1,0 +1,51 @@
+.navigation {
+	background-color: $color-white;
+	border-bottom: rem-calc(1) solid $color-border;
+
+	&__logo {
+		@include grid-column(2);
+
+		font-family: $font-secondary;
+		font-weight: 700;
+		font-size: rem-calc(26);
+		text-decoration: none;
+		color: $color-text;
+		padding-top: rem-calc(15);
+		padding-bottom: rem-calc(15);
+	}
+
+	&__list {
+		@include grid-column(10);
+
+		text-align: right;
+		margin-top: 0;
+		margin-bottom: 0;
+
+		li {
+			display: inline-block;
+			padding: rem-calc(22) 0;
+		}
+	}
+
+	&__item {
+		font-family: $font-primary;
+		font-weight: 400;
+		font-size: rem-calc(15);
+		text-decoration: none;
+		text-transform: uppercase;
+		padding-left: 2.5em;
+		height: 100%;
+		color: $color-text;
+		transition: opacity $hover-duration;
+
+		&:hover {
+			opacity: $hover-opacity;
+		}
+
+		&--home {
+			font-weight: 700;
+			color: $color-secondary;
+		}
+
+	}
+}

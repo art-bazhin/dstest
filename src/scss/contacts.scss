@@ -1,0 +1,19 @@
+.contacts {
+  background-color: $color-white;
+  padding-top: rem-calc(170);
+  margin-bottom: rem-calc(80);
+  font-family: $font-primary;
+
+  &__form-container {
+    @include grid-column(6);
+  }
+
+  &__info-container {
+    @include grid-column(6);
+
+    p {
+      font-size: rem-calc(14);
+      margin-bottom: 2.4em;
+    }
+  }
+}

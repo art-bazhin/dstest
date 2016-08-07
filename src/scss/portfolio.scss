@@ -1,0 +1,41 @@
+.portfolio {
+  background-color: $color-portfolio;
+  padding-top: rem-calc(170);
+
+  &__column {
+    @include grid-column(4);
+  }
+
+  &__item {
+    margin-bottom: rem-calc(20);
+
+    a {
+      display: block;
+      line-height: 0;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      opacity: $hover-opacity;
+      transition: opacity $hover-duration;
+      -webkit-backface-visibility: hidden;
+    }
+
+    img:hover {
+      opacity: 1;
+    }
+  }
+
+  &__button-container {
+    @include grid-column;
+  }
+
+  &__button-container {
+    @include grid-row;
+
+    text-align: center;
+    padding-top: rem-calc(140);
+    padding-bottom: rem-calc(100);
+  }
+}

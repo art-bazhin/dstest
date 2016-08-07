@@ -1,0 +1,36 @@
+.footer {
+  background-color: $color-footer;
+  padding-top: rem-calc(45);
+  text-align: center;
+  font-family: $font-primary;
+  color: $color-text-lighten;
+  font-size: rem-calc(14);
+
+	&__links {
+		margin-top: rem-calc(35);
+		padding-left: 0;
+
+		li {
+			display: inline-block;
+			margin-right: rem-calc(15);
+			margin-left: rem-calc(15);
+		}
+
+		a {
+			font-family: $font-secondary;
+			color: $color-text-lighten;
+			text-decoration: none;
+			transition: opacity $hover-duration;
+		}
+
+		a:hover {
+			opacity: $hover-opacity;
+		}
+	}
+
+	&__copyright {
+		font-weight: 300;
+		margin-top: rem-calc(30);
+		margin-bottom: rem-calc(45);
+	}
+}
