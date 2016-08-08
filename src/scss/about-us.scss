@@ -1,5 +1,15 @@
 .about-us {
 	background-color: $color-white;
-	padding-top: rem-calc(120);
-	margin-bottom: rem-calc(110);
+	padding-top: rem-calc(70);
+	margin-bottom: rem-calc(40);
+
+	@include breakpoint (medium) {
+		padding-top: rem-calc(90);
+		margin-bottom: rem-calc(60);
+	}
+
+	@include breakpoint (large) {
+		padding-top: rem-calc(140);
+		margin-bottom: rem-calc(90);
+	}
 }

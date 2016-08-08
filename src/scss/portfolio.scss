@@ -1,13 +1,39 @@
 .portfolio {
   background-color: $color-portfolio;
-  padding-top: rem-calc(170);
+  padding-top: rem-calc(70);
+
+  @include breakpoint (medium) {
+    padding-top: rem-calc(90);
+  }
+
+  @include breakpoint (large) {
+    padding-top: rem-calc(140);
+  }
 
   &__column {
-    @include grid-column(4);
+    @include grid-column(10);
+    @include grid-column-position(center);
+
+    @include breakpoint(medium) {
+      @include grid-column(4);
+    }
   }
 
   &__item {
-    margin-bottom: rem-calc(20);
+    margin-bottom: rem-calc(10);
+    opacity: 1;
+    transition: opacity $hover-duration;
+    -webkit-backface-visibility: hidden;
+
+    .no-touchevents &:hover,
+    .touchevents &:active {
+      opacity: 1;
+    }
+
+    @include breakpoint(large) {
+      opacity: $hover-opacity;
+      margin-bottom: rem-calc(20);
+    }
 
     a {
       display: block;
@@ -17,25 +43,24 @@
     img {
       width: 100%;
       height: auto;
-      opacity: $hover-opacity;
-      transition: opacity $hover-duration;
-      -webkit-backface-visibility: hidden;
-    }
-
-    img:hover {
-      opacity: 1;
     }
   }
 
   &__button-container {
     @include grid-column;
-  }
-
-  &__button-container {
-    @include grid-row;
 
     text-align: center;
-    padding-top: rem-calc(140);
-    padding-bottom: rem-calc(100);
+    padding-top: rem-calc(40);
+    padding-bottom: rem-calc(40);
+
+    @include breakpoint(large) {
+      padding-top: rem-calc(60);
+      padding-bottom: rem-calc(60);
+    }
+
+    @include breakpoint(large) {
+      padding-top: rem-calc(90);
+      padding-bottom: rem-calc(90);
+    }
   }
 }

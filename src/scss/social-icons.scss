@@ -1,10 +1,19 @@
 .social-icons {
-  text-align: left;
+  text-align: center;
   padding-left: 0;
+
+  @include breakpoint (large) {
+    text-align: left;
+  }
 
   li {
     display: inline-block;
     margin-right: rem-calc(13);
+    margin-left: rem-calc(13);
+
+    @include breakpoint (large) {
+      margin-left: 0;
+    }
   }
 
   &__icon {
@@ -12,9 +21,9 @@
     background-image: url("../img/sprite.png");
     background-position-y: -88px;
     display: block;
-    transition: opacity $hover-duration;
 
-    &:hover {
+    .no-touchevents &:hover,
+    .touchevents &:active {
     	opacity: $hover-opacity;
     }
 

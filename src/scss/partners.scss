@@ -1,28 +1,57 @@
 .partners {
 	background-color: $color-partners;
 	font-family: $font-primary;
-	padding-bottom: rem-calc(100);
+	padding-bottom: rem-calc(40);
+	font-size: rem-calc(30);
+
+	@include breakpoint (medium) {
+		padding-bottom: rem-calc(60);
+	}
+
+	@include breakpoint (large) {
+		padding-bottom: rem-calc(90);
+	}
 
 	&__header {
-		font-size: rem-calc(30);
-		margin-top: 3em;//rem-calc(90);
-		margin-bottom: 3em;//rem-calc(30);
+		font-size: 0.7em;
+		margin-top: 2.5em;
+		margin-bottom: 1.5em;
 		color: $color-white;
 		font-weight: 300;
 		letter-spacing: 0.06em;
+
+		@include breakpoint(medium) {
+			font-size: 1em;
+			margin-bottom: 2.5em;
+		}
+
+		@include breakpoint(large) {
+			margin-top: 3em;
+			margin-bottom: 3em;
+		}
 	}
 
 	&__partner {
-		@include grid-column(2);
-		text-align: left;
-	
-		&--first {
-			@include grid-column-offset(2)
-		}
+		@include grid-column(6);
+		text-align: center;
+		margin-bottom: rem-calc(30);
 
 		&--last {
-			@include grid-column-end;
 			padding-top: rem-calc(5);
+		}
+
+		@include breakpoint(medium) {
+			@include grid-column(2);
+			text-align: left;
+
+			&--first {
+				@include grid-column-offset(2)
+			}
+
+			&--last {
+				@include grid-column-end;
+				padding-top: rem-calc(5);
+			}
 		}
 	}
 
@@ -32,7 +61,8 @@
 		transition: opacity $hover-duration;
 		-webkit-backface-visibility: hidden;
 
-		&:hover {
+		.no-touchevents &:hover,
+    .touchevents &:active {
 			opacity: $hover-opacity;
 		}
 	}

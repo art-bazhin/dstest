@@ -3,6 +3,24 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
+    concat: {
+        dist: {
+            src: [
+                'js/modernizr.js', 
+                'js/jquery-3.1.0.js', 
+                'js/global.js'  
+            ],
+            dest: '../js/script.js',
+        }
+    },
+
+    uglify: {
+        build: {
+            src: '../js/script.js',
+            dest: '../js/script.min.js'
+        }
+    },
+
     sass: {
       dist: {
         options: {
@@ -26,18 +44,33 @@ module.exports = function(grunt) {
     },
 
     watch: {
-      options: { livereload: true },
-      files: ['scss/*'],
-      tasks: ['default']
+      scripts: {
+        files: ['js/*.js'],
+        tasks: ['concat', 'uglify'],
+        options: {
+          spawn: false,
+        },
+      },
+
+      css: {
+        files: ['scss/*'],
+        tasks: ['sass', 'autoprefixer'],
+        options: {
+          spawn: false, 
+          livereload: true, 
+        },
+      }
     }
 
   });
 
+  grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-autoprefixer');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
 
-  grunt.registerTask('default', ['sass', 'autoprefixer']);
+  grunt.registerTask('default', ['sass', 'autoprefixer', 'concat', 'uglify']);
 
 };

@@ -1,12 +1,38 @@
 .logo {
 	max-width: 123px;
 	max-height: 123px;
-  width: rem-calc(123);
-  height: rem-calc(123);
 
-  &--footer {
-	  width: rem-calc(58);
-	  height: rem-calc(58);
-	  opacity: 0.15;
+	width: rem-calc(80);
+	height: rem-calc(80);
+
+	&--footer {
+		display: none;
+
+		@include breakpoint(large) {
+			display: inline-block;
+			width: rem-calc(58);
+		  height: rem-calc(58);
+		  opacity: 0.15;
+		}
   }
+
+	@include breakpoint(medium) {
+		@include breakpoint(portrait) {
+	  	width: rem-calc(123);
+	  	height: rem-calc(123);
+		}
+	}
+
+	@include breakpoint(large) {
+	  width: rem-calc(123);
+	  height: rem-calc(123);
+
+		  &--footer {
+				display: inline-block;
+				width: rem-calc(58);
+			  height: rem-calc(58);
+			  opacity: 0.15;
+	  }
+	}
+
 }

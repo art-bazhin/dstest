@@ -1,3 +1,11 @@
 .container {
   @include grid-row;
+
+  padding-right: rem-calc(10);
+  padding-left: rem-calc(10);
+
+  @include breakpoint(large) {
+  	padding-right: 0;
+  	padding-left: 0;
+  }
 }

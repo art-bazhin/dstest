@@ -3,33 +3,93 @@
   font-family: $font-primary;
   color: $color-white;
   text-align: center;
-  padding-top: rem-calc(215);
+  overflow: hidden;
+  font-size: rem-calc(14);
   padding-bottom: rem-calc(240);
+  padding-top: 20%;
+
+  @include breakpoint(landscape) {
+      padding-top: 5%;
+  }
+
+  @include breakpoint(medium) {
+    padding-top: 30%;
+
+    @include breakpoint(landscape) {
+      padding-top: 7%;
+    }
+  }
+
+  @include breakpoint(large) {
+    padding-top: 30%;
+
+    @include breakpoint(landscape) {
+      padding-top: 10%;
+    }
+  }
 
   &__header {
-    margin-top: rem-calc(135);
-    margin-bottom: rem-calc(50);
-    font-size: rem-calc(34);
     letter-spacing: 0.16em;
     font-weight: 400;
     text-transform: uppercase;
+    margin-bottom: 2em;
+    margin-top: 1em;
+    font-size: 2.429em;
+
+    @include breakpoint(landscape) {
+        margin-bottom: 1em;
+        margin-top: 0.8em;
+    }
+
+    @include breakpoint(medium) {
+      @include breakpoint(landscape) {
+        margin-bottom: 1em;
+      }
+    }
+    @include breakpoint(large) {
+      margin-top: 3em;
+      font-size: 2.429em
+    }
   }
 
   &__header:after {
-  	content: "";
-  	width: 3.088em;
-  	border-bottom: 0.059em solid $color-white;
-  	display: block;
-  	margin: 0 auto;
-  	margin-top: 1.471em;
+    content: "";
+    width: 3.088em;
+    border-bottom: 0.059em solid $color-white;
+    display: block;
+    margin: 0 auto;
+    margin-top: 1em;
 
+    @include breakpoint(large) {
+      margin-top: 1.471em;
+    }
   }
 
   &__tagline {
-  	font-size: rem-calc(14);
+    font-size: rem-calc(14);
     letter-spacing: 0.06em;
     font-weight: 300;
     margin-top: 0;
-    margin-bottom: rem-calc(160);
+    margin-bottom: 2em;
+    font-size: 1em;
+
+    @include breakpoint(landscape) {
+        display: none;
+    }
+
+    @include breakpoint(medium) {
+      @include breakpoint(landscape) {
+        display: none;
+      }
+    }
+
+    @include breakpoint(large) {
+      margin-bottom: 8em;
+      font-size: 1em;
+
+      @include breakpoint(landscape) {
+        display: block;
+      }
+    }
   }
 }

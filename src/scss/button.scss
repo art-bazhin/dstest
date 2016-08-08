@@ -1,6 +1,6 @@
 .button { 
   font-family: $font-primary;
-  font-size: rem-calc(16);
+  font-size: 1em;
   letter-spacing: 0.06em;
   color: $color-white;
   text-transform: uppercase;
@@ -10,8 +10,10 @@
   display: inline-block;
   position: relative;
   transition: opacity $hover-duration;
+  -webkit-backface-visibility: hidden;
 
-  &:hover {
+  .no-touchevents &:hover,
+  .touchevents &:active {
   	opacity: $hover-opacity;
   }
 
@@ -23,17 +25,42 @@
 		border-bottom: 0.125em solid $color-white;
 		position: absolute;
 		transform: rotate(-45deg);
-		top: 7.5em;
+		top: 6em;
 		left: 48%;
 		transition: opacity $hover-duration;
+    -webkit-backface-visibility: hidden;
+
+    @include breakpoint(landscape) {
+      display: none;
+    }
+
+    @include breakpoint(medium) {
+      top: 8em;
+
+       @include breakpoint(landscape) {
+        display: block;
+        top: 4em;
+      }
+    }
+
+    @include breakpoint(large) {
+      @include breakpoint(landscape) {
+        top: 8em;
+      }
+    }
   }
 
-  	&--arrow:hover:after {
+  .no-touchevents &--arrow:hover:after,
+  .touchevents &--arrow:active:after {
   	opacity: $hover-opacity;
   }
 
   &--black {
     color: $color-black;
     border-color: $color-black;
+  }
+
+  @include breakpoint(medium) {
+    font-size: 1.143em;
   }
 }

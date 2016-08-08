@@ -1,15 +1,33 @@
 .contacts {
   background-color: $color-white;
-  padding-top: rem-calc(170);
-  margin-bottom: rem-calc(80);
+  padding-top: rem-calc(70);
+  margin-bottom: rem-calc(40);
   font-family: $font-primary;
 
+  @include breakpoint (medium) {
+    padding-top: rem-calc(90);
+  }
+
+  @include breakpoint (large) {
+    padding-top: rem-calc(140);
+  }
+
   &__form-container {
-    @include grid-column(6);
+    @include grid-column(12);
+
+    @include breakpoint (large) {
+      @include grid-column(6);
+    }
   }
 
   &__info-container {
-    @include grid-column(6);
+    @include grid-column(12);
+    text-align: center;
+
+    @include breakpoint (large) {
+      @include grid-column(6);
+      text-align: left;
+    }
 
     p {
       font-size: rem-calc(14);

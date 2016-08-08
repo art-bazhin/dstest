@@ -1,44 +1,90 @@
 .navigation {
 	background-color: $color-white;
 	border-bottom: rem-calc(1) solid $color-border;
+	position: absolute;
+	width: 100%;
+	font-size: rem-calc(15);
+	opacity: 0.93;
+
+	@include breakpoint (large) {
+		opacity: 1;
+	}
+	
+	&--sticky {
+		position: fixed;
+		top: 0;
+		z-index: 10;
+	}
 
 	&__logo {
-		@include grid-column(2);
+		display: none;
+		
+		@include breakpoint (large) {
+			@include grid-column(2);
 
-		font-family: $font-secondary;
-		font-weight: 700;
-		font-size: rem-calc(26);
-		text-decoration: none;
-		color: $color-text;
-		padding-top: rem-calc(15);
-		padding-bottom: rem-calc(15);
+			display: block;
+			font-family: $font-secondary;
+			font-weight: 700;
+			font-size: rem-calc(26);
+			text-decoration: none;
+			color: $color-text;
+			padding-top: rem-calc(15);
+			padding-bottom: rem-calc(15);
+		}
 	}
 
 	&__list {
-		@include grid-column(10);
+		@include grid-column(12);
 
-		text-align: right;
+		text-align: center;
 		margin-top: 0;
 		margin-bottom: 0;
 
 		li {
 			display: inline-block;
-			padding: rem-calc(22) 0;
+			padding: 0.5em 0.1%;
+
+			@include breakpoint (landscape) {		
+				padding: 0.5em 5%;
+			}
+
+			&:first-child {
+				padding-left: 0;
+			}
+
+			&:last-child {
+				padding-right: 0;
+			}
+
+			@include breakpoint (medium) {		
+				padding: 1em 5%;
+			}
+
+			@include breakpoint (large) {		
+				padding: 1.5em 0;
+			}
+		}
+
+		@include breakpoint (large) {
+			@include grid-column(10);
+
+			text-align: right;
 		}
 	}
 
 	&__item {
 		font-family: $font-primary;
 		font-weight: 400;
-		font-size: rem-calc(15);
+		font-size: 0.7em;
 		text-decoration: none;
 		text-transform: uppercase;
-		padding-left: 2.5em;
+		padding-left: 1em;
+		padding-right: 1em;
 		height: 100%;
 		color: $color-text;
-		transition: opacity $hover-duration;
 
-		&:hover {
+		.no-touchevents &:hover,
+		.touchevents &:active {
 			opacity: $hover-opacity;
 		}
 
@@ -47,5 +93,19 @@
 			color: $color-secondary;
 		}
 
+		@include breakpoint (medium) {	
+			font-size: 1em;
+		}
+
+		@include breakpoint (large) {	
+			text-align: center;
+			padding-left: 2.5em;
+			padding-right: 0;
+		}
+
 	}
+}
+
+.sticky-container {
+	position: relative;
 }

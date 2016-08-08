@@ -1,9 +1,24 @@
 .quality {
-  @include grid-column(4);
+  @include grid-column(12);
+
+  @include breakpoint(medium) {
+    @include grid-column(6);
+
+    &--last {
+      @include grid-column-offset(3);
+      @include grid-column-end;
+    }
+  }
+
+  @include breakpoint(large) {
+    @include grid-column(4);
+    @include grid-column-offset(0);
+  }
 
   font-family: $font-primary;
   text-align: center;
-  padding-bottom: rem-calc(10);
+  padding-top: rem-calc(10);
+  padding-bottom: rem-calc(30);
 
   &__header {
     font-size: rem-calc(26);
@@ -21,12 +36,16 @@
       border: rem-calc(2) solid $color-quality;
       display: block;
       border-radius: 50%;
-      margin-bottom: rem-calc(50);
+      margin-bottom: rem-calc(30);
       margin-left: auto;
       margin-right: auto;
       background-image: url(../img/sprite.png);
     	background-repeat: no-repeat;
     	box-sizing: content-box;
+
+      @include breakpoint(large) {
+        margin-bottom: rem-calc(50);
+      }
     }
 
     &--responsive:before {

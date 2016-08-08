@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Creative Branding</title>
+  <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
   <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="css/style.css">
@@ -19,31 +20,31 @@
 </head>
 
 <body class="preload">
-  <header class="promo">
+  <header class="promo" id="promo">
     <div class="container">
       <img src="img/logo.png" alt="logo" class="logo">
       <h1 class="promo__header">Creative Branding</h1>
       <p class="promo__tagline">Please familiarize yourself with our offer</p>
-      <a href="#" class="button button--arrow">Read More</a>
+      <a href="#about-us" class="button button--arrow">Read More</a>
     </div>
   </header>
-  <nav class="navigation">
-    <div class="container">
-      <a class="navigation__logo" href="#">Onepage</a>
-      <ul class="navigation__list">
-        <li><a class="navigation__item navigation__item--home" href="#">Home</a></li>
-        <li><a class="navigation__item" href="#">About Us</a></li>
-        <li><a class="navigation__item" href="#">Portfolio</a></li>
-        <li><a class="navigation__item" href="#">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
   <main>
-    <section class="about-us">
+    <nav class="navigation" id="navigation">
+      <div class="container">
+        <a class="navigation__logo" href="#">Onepage</a>
+        <ul class="navigation__list">
+          <li><a class="navigation__item navigation__item--home" href="#promo">Home</a></li>
+          <li><a class="navigation__item" href="#about-us">About Us</a></li>
+          <li><a class="navigation__item" href="#portfolio">Portfolio</a></li>
+          <li><a class="navigation__item" href="#contacts">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <section class="about-us" id="about-us">
       <div class="container">
         <div class="section-header-block">
           <h2 class="section-header-block__header">About Us</h2>
-          <p class="section-header-block__info">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          <p class="section-header-block__info">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, quae. Rerum culpa asperiores explicabo neque accusantium, illum, officia deleniti consectetur repudiandae, ipsum voluptas sed repellendus.</p>
         </div>
         <div class="quality">
           <h3 class="quality__header quality__header--responsive">Responsive</h3>
@@ -53,13 +54,13 @@
           <h3 class="quality__header quality__header--minimalist">Minimalist</h3>
           <p class="quality__info">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero hic, distinctio provident eveniet perferendis.</p>
         </div>
-        <div class="quality">
+        <div class="quality quality--last">
           <h3 class="quality__header quality__header--freebies">Freebies</h3>
           <p class="quality__info">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero hic, distinctio provident eveniet perferendis.</p>
         </div>
       </div>
     </section>
-    <section class="portfolio">
+    <section class="portfolio" id="portfolio">
       <div class="container">
         <div class="section-header-block">
           <h2 class="section-header-block__header">Portfolio</h2>
@@ -124,7 +125,7 @@
         </div>
       </div>
     </section>
-    <section class="contacts">
+    <section class="contacts" id="contacts">
       <div class="container">
         <div class="section-header-block">
           <h2 class="section-header-block__header">Contact</h2>
@@ -136,7 +137,7 @@
               <input class="form__input" type="text" name="name" id="name">
             </div>
             <div class="form__field-container form__field-container--email">
-              <label for="email">Your name</label>
+              <label for="email">Your e-mail</label>
               <input class="form__input" type="text" name="email" id="email">
             </div>
             <div class="form__field-container form__field-container--message">
@@ -185,6 +186,7 @@
       </p>
     </div>
   </footer>
+  <script src="js/script.min.js"></script>
 </body>
 
 </html>

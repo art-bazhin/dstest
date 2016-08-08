@@ -1,5 +1,9 @@
 .form {
-  width: 85%;
+  width: 100%;
+
+  @include breakpoint (large) {
+    width: 85%;
+  }
 
   label {
     display: block;
@@ -17,7 +21,11 @@
     float: left;
 
     &--name, &--email {
-      width: 42%;
+      width: 47%;
+      
+      @include breakpoint (large) {
+        width: 42%;
+      }
     }
 
     &--email {
@@ -25,7 +33,11 @@
     }
 
     &--message {
-      padding-top: rem-calc(56);
+      padding-top: rem-calc(16);
+
+      @include breakpoint (large) {
+        padding-top: rem-calc(56);
+      }
 
       @include clearfix;
 
@@ -40,10 +52,15 @@
     border: none;
     border-top: rem-calc(1) solid $color-black;
     line-height: rem-calc(35);
+    height: rem-calc(35);
 
     &:focus {
       outline: none;
     }
+  }
+
+  &__textarea {
+    height: rem-calc(35)*3;
   }
 
   &__textarea {
@@ -59,9 +76,13 @@
     font-weight: 700;
     letter-spacing: 0.06em;
     margin-bottom: 1em;
-    margin-top: 3em;
+    margin-top: 1em;
     padding-right: 0;
     cursor: pointer;
+
+    @include breakpoint (large) {
+      margin-top: 3em;
+    }
 
     &:focus {
       outline: none;
