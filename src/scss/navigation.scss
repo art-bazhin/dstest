@@ -1,111 +1,119 @@
 .navigation {
-	background-color: $color-white;
-	border-bottom: rem-calc(1) solid $color-border;
-	position: absolute;
-	width: 100%;
-	font-size: rem-calc(15);
-	opacity: 0.93;
+  &__wrapper {
+    position: relative;
+  }
 
-	@include breakpoint (large) {
-		opacity: 1;
-	}
-	
-	&--sticky {
-		position: fixed;
-		top: 0;
-		z-index: 10;
-	}
+  background-color: $color-white;
+  border-bottom: rem-calc(1) solid $color-border;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  font-size: rem-calc(15);
+  opacity: 0.93;
 
-	&__logo {
-		display: none;
-		
-		@include breakpoint (large) {
-			@include grid-column(2);
+  @include breakpoint(large) {
+    opacity: 1;
+  }
 
-			display: block;
-			font-family: $font-secondary;
-			font-weight: 700;
-			font-size: rem-calc(26);
-			text-decoration: none;
-			color: $color-text;
-			padding-top: rem-calc(15);
-			padding-bottom: rem-calc(15);
-		}
-	}
 
-	&__list {
-		@include grid-column(12);
+  &--sticky {
+    position: fixed;
+    z-index: 10;
+  }
 
-		text-align: center;
-		margin-top: 0;
-		margin-bottom: 0;
+  &__logo {
+    display: none;
 
-		li {
-			display: inline-block;
-			padding: 0.5em 0.1%;
+    @include breakpoint(large) {
+      @include grid-column(2);
 
-			@include breakpoint (landscape) {		
-				padding: 0.5em 5%;
-			}
+      display: block;
+      font-family: $font-secondary;
+      font-weight: 700;
+      font-size: rem-calc(26);
+      text-decoration: none;
+      color: $color-text;
+      padding-top: rem-calc(15);
+      padding-bottom: rem-calc(15);
+    }
+  }
 
-			&:first-child {
-				padding-left: 0;
-			}
+  &__list {
+    @include grid-column(12);
 
-			&:last-child {
-				padding-right: 0;
-			}
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
 
-			@include breakpoint (medium) {		
-				padding: 1em 5%;
-			}
+    li {
+      display: inline-block;
+      padding: 0.5em 0.1%;
 
-			@include breakpoint (large) {		
-				padding: 1.5em 0;
-			}
-		}
+      @include breakpoint(landscape) {
+        padding: 0.5em 5%;
+      }
 
-		@include breakpoint (large) {
-			@include grid-column(10);
 
-			text-align: right;
-		}
-	}
+      &:first-child {
+        padding-left: 0;
+      }
 
-	&__item {
-		font-family: $font-primary;
-		font-weight: 400;
-		font-size: 0.7em;
-		text-decoration: none;
-		text-transform: uppercase;
-		padding-left: 1em;
-		padding-right: 1em;
-		height: 100%;
-		color: $color-text;
+      &:last-child {
+        padding-right: 0;
+      }
 
-		.no-touchevents &:hover,
-		.touchevents &:active {
-			opacity: $hover-opacity;
-		}
+      @include breakpoint(medium) {
+        padding: 1em 5%;
+      }
 
-		&--home {
-			font-weight: 700;
-			color: $color-secondary;
-		}
 
-		@include breakpoint (medium) {	
-			font-size: 1em;
-		}
+      @include breakpoint(large) {
+        padding: 1.5em 0;
+      }
+    }
 
-		@include breakpoint (large) {	
-			text-align: center;
-			padding-left: 2.5em;
-			padding-right: 0;
-		}
+    @include breakpoint(large) {
+      @include grid-column(10);
 
-	}
-}
+      text-align: right;
+    }
+  }
 
-.sticky-container {
-	position: relative;
+  &__item {
+    font-family: $font-primary;
+    font-weight: 400;
+    font-size: 0.7em;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding-left: 1em;
+    padding-right: 1em;
+    height: 100%;
+    color: $color-text;
+
+    .no-touchevents &:hover,
+    .touchevents &:active {
+      color: lighten($color-text, 20%);
+    }
+
+    &--home {
+      font-weight: 700;
+      color: $color-secondary;
+
+      .no-touchevents &:hover,
+      .touchevents &:active {
+        color: lighten($color-secondary, 10%);
+      }
+    }
+
+    @include breakpoint(medium) {
+      font-size: 1em;
+    }
+
+
+    @include breakpoint(large) {
+      text-align: center;
+      padding-left: 2.5em;
+      padding-right: 0;
+    }
+  }
 }

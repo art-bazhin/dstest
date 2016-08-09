@@ -2,16 +2,19 @@
   background-color: $color-portfolio;
   padding-top: rem-calc(70);
 
-  @include breakpoint (medium) {
+  @include breakpoint(medium) {
     padding-top: rem-calc(90);
   }
 
-  @include breakpoint (large) {
+
+  @include breakpoint(large) {
     padding-top: rem-calc(140);
   }
 
+
   &__column {
     @include grid-column(10);
+
     @include grid-column-position(center);
 
     @include breakpoint(medium) {
@@ -35,6 +38,7 @@
       margin-bottom: rem-calc(20);
     }
 
+
     a {
       display: block;
       line-height: 0;
@@ -57,6 +61,7 @@
       padding-top: rem-calc(60);
       padding-bottom: rem-calc(60);
     }
+
 
     @include breakpoint(large) {
       padding-top: rem-calc(90);

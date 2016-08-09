@@ -16,7 +16,7 @@ $('a[href^="#"]').click(function(e) {
   e.preventDefault();
   var scroll_el = $(this).attr('href');
   var scroll_dist = $(scroll_el).offset().top;
-  var scroll_dur = Math.abs(scroll_dist - $(document).scrollTop()) / 3;
+  var scroll_dur = Math.abs(scroll_dist - $(document).scrollTop()) / 2;
 
   if ($(scroll_el).length != 0) {
     $('html, body').animate({ scrollTop: scroll_dist }, scroll_dur);
@@ -25,14 +25,14 @@ $('a[href^="#"]').click(function(e) {
 
 //setting promo block height 
 function setHeight() {
-  $('#promo').css({
-    height: $(window).height() + 'px'
-  });
+  $('#promo').css(
+    'min-height: ', $(window).height() + 'px'
+  );
 }
 
 if (Modernizr.cssvhunit) {
     // vh supported
-    $('#promo').css({ height: '100vh' });
+    $('#promo').css('min-height', '100vh');
   } else {
     // vh not-supported
     setHeight(); 

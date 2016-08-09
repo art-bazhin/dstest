@@ -8,38 +8,29 @@
   <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="css/style.css">
-  <script type="text/javascript">
-  window.addEventListener(
-    'load',
-    function load() {
-      window.removeEventListener('load', load, false);
-      document.body.classList.remove('preload');
-    },
-    false);
-  </script>
 </head>
 
-<body class="preload">
+<body>
   <header class="promo" id="promo">
-    <div class="container">
-      <img src="img/logo.png" alt="logo" class="logo">
-      <h1 class="promo__header">Creative Branding</h1>
-      <p class="promo__tagline">Please familiarize yourself with our offer</p>
-      <a href="#about-us" class="button button--arrow">Read More</a>
-    </div>
+    <img src="img/logo.png" alt="logo" class="logo">
+    <h1 class="promo__header">Creative Branding</h1>
+    <p class="promo__tagline">Please familiarize yourself with our offer</p>
+    <a href="#about-us" class="button button--arrow">Read More</a>
   </header>
   <main>
-    <nav class="navigation" id="navigation">
-      <div class="container">
-        <a class="navigation__logo" href="#">Onepage</a>
-        <ul class="navigation__list">
-          <li><a class="navigation__item navigation__item--home" href="#promo">Home</a></li>
-          <li><a class="navigation__item" href="#about-us">About Us</a></li>
-          <li><a class="navigation__item" href="#portfolio">Portfolio</a></li>
-          <li><a class="navigation__item" href="#contacts">Contact</a></li>
-        </ul>
-      </div>
-    </nav>
+    <div class="navigation__wrapper">
+      <nav class="navigation" id="navigation">
+        <div class="container">
+          <a class="navigation__logo" href="#">Onepage</a>
+          <ul class="navigation__list">
+            <li><a class="navigation__item navigation__item--home" href="#promo">Home</a></li>
+            <li><a class="navigation__item" href="#about-us">About Us</a></li>
+            <li><a class="navigation__item" href="#portfolio">Portfolio</a></li>
+            <li><a class="navigation__item" href="#contacts">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
     <section class="about-us" id="about-us">
       <div class="container">
         <div class="section-header-block">

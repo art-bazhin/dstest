@@ -1,9 +1,10 @@
 .form {
   width: 100%;
 
-  @include breakpoint (large) {
+  @include breakpoint(large) {
     width: 85%;
   }
+
 
   label {
     display: block;
@@ -22,8 +23,8 @@
 
     &--name, &--email {
       width: 47%;
-      
-      @include breakpoint (large) {
+
+      @include breakpoint(large) {
         width: 42%;
       }
     }
@@ -35,9 +36,10 @@
     &--message {
       padding-top: rem-calc(16);
 
-      @include breakpoint (large) {
+      @include breakpoint(large) {
         padding-top: rem-calc(56);
       }
+
 
       @include clearfix;
 
@@ -60,7 +62,7 @@
   }
 
   &__textarea {
-    height: rem-calc(35)*3;
+    height: rem-calc(35) * 3;
   }
 
   &__textarea {
@@ -80,9 +82,10 @@
     padding-right: 0;
     cursor: pointer;
 
-    @include breakpoint (large) {
+    @include breakpoint(large) {
       margin-top: 3em;
     }
+
 
     &:focus {
       outline: none;

@@ -7,44 +7,46 @@
   font-size: rem-calc(14);
 
   @include breakpoint(large) {
-  	padding-top: 3em;
+    padding-top: 3em;
   }
 
-	&__links {
-		margin-top: rem-calc(35);
-		padding-left: 0;
-		font-size: 0.8em;
 
-		@include breakpoint(medium) {
-  		font-size: 1em;
-  	}
+  &__links {
+    margin-top: rem-calc(35);
+    padding-left: 0;
+    font-size: 0.8em;
 
-		li {
-			display: inline-block;
-			margin-right: rem-calc(15);
-			margin-left: rem-calc(15);
-			margin-bottom: 1em;
-		}
+    @include breakpoint(medium) {
+      font-size: 1em;
+    }
 
-		a {
-			font-family: $font-secondary;
-			color: $color-text-lighten;
-			text-decoration: none;
-		}
 
-		a:hover {
-			opacity: $hover-opacity;
-		}
-	}
+    li {
+      display: inline-block;
+      margin-right: rem-calc(15);
+      margin-left: rem-calc(15);
+      margin-bottom: 1em;
+    }
 
-	&__copyright {
-		font-weight: 300;
-		margin-top: rem-calc(30);
-		margin-bottom: 3em;
-		font-size: 0.7em;
+    a {
+      font-family: $font-secondary;
+      color: $color-text-lighten;
+      text-decoration: none;
+    }
 
-		@include breakpoint(medium) {
-  		font-size: 1em;
-  	}
-	}
+    a:hover {
+      opacity: $hover-opacity;
+    }
+  }
+
+  &__copyright {
+    font-weight: 300;
+    margin-top: rem-calc(30);
+    margin-bottom: 3em;
+    font-size: 0.7em;
+
+    @include breakpoint(medium) {
+      font-size: 1em;
+    }
+  }
 }

@@ -1,4 +1,4 @@
-.button { 
+.button {
   font-family: $font-primary;
   font-size: 1em;
   letter-spacing: 0.06em;
@@ -9,39 +9,39 @@
   border: 0.063em solid $color-white;
   display: inline-block;
   position: relative;
-  transition: opacity $hover-duration;
-  -webkit-backface-visibility: hidden;
+  margin: 0 rem-calc(10);
 
   .no-touchevents &:hover,
   .touchevents &:active {
-  	opacity: $hover-opacity;
+    border-color: darken($color-white, 20%);
+    color: darken($color-white, 20%);
   }
 
   &--arrow:after {
-  	content: "";
-		width: 0.625em;
-		height: 0.625em;
-		border-left: 0.125em solid $color-white;
-		border-bottom: 0.125em solid $color-white;
-		position: absolute;
-		transform: rotate(-45deg);
-		top: 6em;
-		left: 48%;
-		transition: opacity $hover-duration;
-    -webkit-backface-visibility: hidden;
+    content: "";
+    width: 0.625em;
+    height: 0.625em;
+    border-left: 0.125em solid $color-white;
+    border-bottom: 0.125em solid $color-white;
+    position: absolute;
+    transform: rotate(-45deg);
+    top: 6em;
+    left: 48%;
 
     @include breakpoint(landscape) {
       display: none;
     }
 
+
     @include breakpoint(medium) {
       top: 8em;
 
-       @include breakpoint(landscape) {
+      @include breakpoint(landscape) {
         display: block;
         top: 4em;
       }
     }
+
 
     @include breakpoint(large) {
       @include breakpoint(landscape) {
@@ -52,12 +52,18 @@
 
   .no-touchevents &--arrow:hover:after,
   .touchevents &--arrow:active:after {
-  	opacity: $hover-opacity;
+    border-color: darken($color-white, 20%);
   }
 
   &--black {
     color: $color-black;
     border-color: $color-black;
+
+    .no-touchevents &:hover,
+    .touchevents &:active {
+      border-color: lighten($color-black, 40%);
+      color: lighten($color-black, 40%);
+    }
   }
 
   @include breakpoint(medium) {
