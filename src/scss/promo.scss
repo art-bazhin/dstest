@@ -4,7 +4,7 @@
   color: $color-white;
   text-align: center;
   font-size: rem-calc(14);
-  //padding-bottom: 40%;
+  padding-bottom: rem-calc(100);
   padding-top: 20%;
 
   @include breakpoint(landscape) {
@@ -14,6 +14,7 @@
 
   @include breakpoint(medium) {
     padding-top: 30%;
+    padding-bottom: rem-calc(150);
 
     @include breakpoint(landscape) {
       padding-top: 7%;
@@ -23,6 +24,7 @@
 
   @include breakpoint(large) {
     padding-top: 30%;
+    padding-bottom: rem-calc(200);
 
     @include breakpoint(landscape) {
       padding-top: 10%;
